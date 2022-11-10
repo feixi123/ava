@@ -11,10 +11,8 @@ import com.javapandeng.service.UserService;
 import com.javapandeng.utils.Consts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -46,9 +44,9 @@ public class LoginController extends BaseController {
      * 管理员登录前
      * @return
      */
-    @RequestMapping("login")
+    @RequestMapping("/mLogin")
     public String login(){
-        return "/login/mLogin";
+        return "login/mLogin";
     }
 
     /**
@@ -71,7 +69,7 @@ public class LoginController extends BaseController {
     @RequestMapping("mtuichu")
     public String mtuichu(HttpServletRequest request){
         request.getSession().setAttribute(Consts.MANAGE,null);
-        return "/login/mLogin";
+        return "/WEB-INF/mLogin.jsp";
     }
 
     /**
